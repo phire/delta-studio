@@ -48,7 +48,7 @@ public:
     PFNGLBINDVERTEXARRAYPROC glBindVertexArray = nullptr;
     PFNGLENABLEVERTEXATTRIBARRAYPROC glEnableVertexAttribArray = nullptr;
     PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointer = nullptr;
-    PFNGLVERTEXATTRIBIPOINTERPROC glVertexAttribIPointer = nullptr;
+    //PFNGLVERTEXATTRIBIPOINTERPROC glVertexAttribIPointer = nullptr;
 
     PFNGLVERTEXATTRIB3FPROC glVertexAttrib3f = nullptr;
     PFNGLVERTEXATTRIB4FPROC glVertexAttrib4f = nullptr;
@@ -85,8 +85,8 @@ public:
     PFNGLUNIFORMMATRIX3FVPROC glUniformMatrix3fv = nullptr;
 
     PFNGLGETPROGRAMIVPROC glGetProgramiv = nullptr;
-    PFNGLGETACTIVEUNIFORMNAMEPROC glGetActiveUniformName = nullptr;
-    PFNGLGETACTIVEUNIFORMSIVPROC glGetActiveUniformsiv = nullptr;
+    //PFNGLGETACTIVEUNIFORMNAMEPROC glGetActiveUniformName = nullptr;
+    //PFNGLGETACTIVEUNIFORMSIVPROC glGetActiveUniformsiv = nullptr;
     PFNGLGETACTIVEUNIFORMPROC glGetActiveUniform = nullptr;
 
     PFNGLDRAWELEMENTSBASEVERTEXPROC glDrawElementsBaseVertex = nullptr;
@@ -122,9 +122,11 @@ public:
     PFNGLBLITFRAMEBUFFERPROC glBlitFramebuffer = nullptr;
     PFNGLBLENDEQUATIONPROC glBlendEquation = nullptr;
 
+#ifdef __WIN32
     PFNWGLMAKECONTEXTCURRENTARBPROC wglMakeContextCurrent = nullptr;
     PFNWGLCREATECONTEXTATTRIBSARBPROC wglCreateContextAttribsARB = nullptr;
     PFNWGLCHOOSEPIXELFORMATARBPROC wglChoosePixelFormatARB = nullptr;
+#endif
 
     bool IsRealContext() { return m_isRealContext; }
 
