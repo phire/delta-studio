@@ -2,17 +2,11 @@
 
 #include "../include/path.h"
 
-#include <Windows.h>
+#include <filesystem>
 
 dbasic::Path dbasic::GetModulePath() {
-    // Windows only implementation for now
     char path[256];
-    DWORD result = GetModuleFileName(NULL, path, 256);
+    std::filesystem::current_path(path);
 
-    Path fullPath = Path(path);
-    Path parentPath;
-
-    fullPath.GetParentPath(&parentPath);
-
-    return parentPath;
+    return path;
 }
